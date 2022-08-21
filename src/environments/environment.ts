@@ -4,13 +4,13 @@
 
 export const environment = {
   firebase: {
-    apiKey: "AIzaSyAf3SDW8Xz5OtZRM4jKjpFNhOzSkswscOc",
-    authDomain: "heart-app-e5715.firebaseapp.com",
-    projectId: "heart-app-e5715",
-    storageBucket: "heart-app-e5715.appspot.com",
-    messagingSenderId: "613875165115",
-    appId: "1:613875165115:web:e3e1eb5ec453bd58a9069e",
-    measurementId: "G-QRJ71V26B6"
+    apiKey: "AIzaSyDxzmQMk-xaS4a_BpO3p2QqcvITaaKwtTA",
+    authDomain: "test-serca.firebaseapp.com",
+    projectId: "test-serca",
+    storageBucket: "test-serca.appspot.com",
+    messagingSenderId: "941638485385",
+    appId: "1:941638485385:web:4c4b32b09bcd6890394d58",
+    measurementId: "G-VF46F7W4FH"
   },
   production: false,
 };

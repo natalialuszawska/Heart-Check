@@ -13,6 +13,7 @@ export class AuthService {
   constructor(private auth: Auth) {}
  
   async register({ email, password }) {
+    console.log("register method")
     try {
       const user = await createUserWithEmailAndPassword(
         this.auth,
@@ -26,6 +27,7 @@ export class AuthService {
   }
  
   async login({ email, password }) {
+    console.log("login method")
     try {
       const user = await signInWithEmailAndPassword(this.auth, email, password);
       return user;
