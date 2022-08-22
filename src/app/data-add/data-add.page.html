@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      New data
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <form>
+      <ion-card-content>
+        <ion-label>Temperature [°C]</ion-label>
+        <ion-input required type="number" [(ngModel)]="note.temperature" name="temeprature"></ion-input>
+        <br>
+        <ion-label>Blood pressure [mm/Hg]</ion-label>
+        <ion-input required type="text" [(ngModel)]="note.bloodPressure" name="bloodPressure"></ion-input>
+        <br>
+        <ion-label>Weight [kg]</ion-label>
+        <ion-input required type="number" [(ngModel)]="note.weight" name="weight"></ion-input>
+        <ion-label>Date</ion-label>
+        <ion-datetime required [(ngModel)]="note.date" name="date" displayFromat="D MMM YYYY HH:mm" pickerFromat="D MMM YYYY"></ion-datetime>
+        <ion-button  color="danger" (click)="addNote()">Send data</ion-button>
+
+       
+      </ion-card-content>
+    </form>
+    
+  </ion-card>
+
+  
+</ion-content>

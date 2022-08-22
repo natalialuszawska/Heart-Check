@@ -18,4 +18,10 @@ export class HomePage implements OnInit {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
   }
+
+  public appPages = [
+    { title: 'Insert new data', url: '/data-add', icon: 'add' },
+    { title: 'Statistics', url: '/trends', icon: 'podium' },
+  ];
+  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 }
