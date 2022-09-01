@@ -21,7 +21,7 @@
         <ion-label>Date</ion-label>
         <ion-datetime required [(ngModel)]="note.date" name="date" displayFromat="D MMM YYYY HH:mm" pickerFromat="D MMM YYYY"></ion-datetime>
         <ion-button  color="danger" (click)="addNote()">Send data</ion-button>
-
+        <ion-button  (click)="view()">View</ion-button>
        
       </ion-card-content>
     </form>
