@@ -1,7 +1,9 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
-import { DataService } from '../services/data.service';
-import { AuthService } from '../services/auth.service';
+import { NotesService } from '../services/notes.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Note } from './note';
+
 @Component({
   selector: 'app-data-add',
   templateUrl: './data-add.page.html',
@@ -9,27 +11,28 @@ import { AuthService } from '../services/auth.service';
 })
 export class DataAddPage implements OnInit {
 
-  note= {temperature: '', bloodPressure:'', weight: '', date:''}
-  constructor(private dataService: DataService,  
-    private auth: AuthService,
-     private cd: ChangeDetectorRef, 
-     private alertCtrl: AlertController, 
-     private modalCtrl: ModalController) { 
-
-  }
+  
+  constructor(private firestore: AngularFirestore,
+    private notesService: NotesService){}
 
   ngOnInit() {
   }
+  temperature?: number; 
+  bloodPressure?:string; 
+  weight?: number;
+  date?: any;
 
-  //to do : zmianić zarartość tej metody 
-  async addNote() {
-    this.auth.addNote(this.note);
-    console.log(this.note)
-
+  note:Note={
+    temperature: this.temperature,
+    bloodPressure: this.bloodPressure,
+    weight: this.weight,
+    date: this.date
   }
 
-  async view(){
-    this.auth.getNotes();
-    
+  addNote() {
+    console.log(this.note);
+    this.notesService.addNote(this.note);
   }
+
+ 
 }

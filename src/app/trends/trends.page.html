@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>trends</ion-title>
+    <ion-title>Trends</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <tr *ngFor="let note of notes">
+    <td>{{note.payload.doc.data().temperature }} </td>
+  </tr>
 </ion-content>

@@ -25,6 +25,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
   declarations: [AppComponent, ],
   imports: [AngularFirestoreModule,AngularFireAuthModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),],

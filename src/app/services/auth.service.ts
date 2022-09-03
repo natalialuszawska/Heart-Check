@@ -14,7 +14,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private auth: Auth,private firestore: Firestore) {}
+  constructor(private auth: Auth,private firestore: Firestore) {
+  }
  
   async register({ email, password }) {
     console.log("register method")
@@ -30,32 +31,36 @@ export class AuthService {
     }
   }
  
-  async login({ email, password }) {
+ login({ email, password }) {
     console.log("login method")
-    try {
-      const user = await signInWithEmailAndPassword(this.auth, email, password);
-      return user;
-    } catch (e) {
-      return null;
-    }
+
+      const userK =  signInWithEmailAndPassword(this.auth, email, password)
+      .catch(er=>null)
+      .then(cr=>cr);
+      console.log("After login:",userK);
+      return userK;
+    
   }
  
   logout() {
     return signOut(this.auth);
   }
 
-  user = this.auth.currentUser;
-
-  addNote(note: any) {
-    const user = this.auth.currentUser;
-    const path = `${user.uid}`;
-
-    //do zapisywanej notatki dodać id równe użytkownikowi!!!
-    
-    console.log('note in service', path)
-    const notesRef = collection(this.firestore, path);
-    return addDoc(notesRef, note);
+  get user(){
+    return this.auth.currentUser;
   }
+  
+  // addNote(note: any) {
+
+  //   const user = this.auth.currentUser;
+  //   const path = `${user.uid}`;
+
+  //   //do zapisywanej notatki dodać id równe użytkownikowi!!!
+    
+  //   console.log('note in service', path)
+  //   const notesRef = collection(this.firestore, path);
+  //   return addDoc(notesRef, note);
+  // }
   //zła konstukcja robi się kolekcja w kolekcji
 
   async getNotes(){
@@ -66,11 +71,4 @@ export class AuthService {
     getDoc(docRef).then((snapshot) => { console.log(snapshot.data()); });
 
   }
-
-
-
 }
-
-  
-
-
