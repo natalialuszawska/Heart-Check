@@ -27,10 +27,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
-  },  {
-    path: 'test',
-    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
   },
+
   {
     path: 'data-add',
     loadChildren: () => import('./data-add/data-add.module').then( m => m.DataAddPageModule)

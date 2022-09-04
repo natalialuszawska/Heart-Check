@@ -21,7 +21,7 @@ export class HomePage implements OnInit {
 
   public appPages = [
     { title: 'Insert new data', url: '/data-add', icon: 'add' },
-    { title: 'Statistics', url: '/trends', icon: 'podium' },
+    { title: 'Trends', url: '/trends', icon: 'podium' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 }

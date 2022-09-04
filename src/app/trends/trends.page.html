@@ -1,9 +1,34 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>trends</ion-title>
+    <ion-title>Trends</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      Temperature
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-card>
+    <ion-card-header>
+      Weight
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+
+    <ion-card-header>
+      Blood pressure
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #doughnutCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -12,17 +12,20 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 
 
+import { Chart } from 'chart.js';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore/'; 
+import { provideFirestore, getFirestore  } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 /* Auth service */
 //import { AuthenticationService } from './shared/authentication.service';
 @NgModule({
   declarations: [AppComponent, ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [AngularFirestoreModule,AngularFireAuthModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),],
