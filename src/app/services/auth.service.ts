@@ -49,26 +49,5 @@ export class AuthService {
   get user(){
     return this.auth.currentUser;
   }
-  
-  // addNote(note: any) {
 
-  //   const user = this.auth.currentUser;
-  //   const path = `${user.uid}`;
-
-  //   //do zapisywanej notatki dodać id równe użytkownikowi!!!
-    
-  //   console.log('note in service', path)
-  //   const notesRef = collection(this.firestore, path);
-  //   return addDoc(notesRef, note);
-  // }
-  //zła konstukcja robi się kolekcja w kolekcji
-
-  async getNotes(){
-
-    const user = this.auth.currentUser;
-    const docRef = doc(this.firestore, user.uid,doc.name );
-    getDoc(docRef).then((doc) => { console.log(doc.data()); });
-    getDoc(docRef).then((snapshot) => { console.log(snapshot.data()); });
-
-  }
 }

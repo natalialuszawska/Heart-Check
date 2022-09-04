@@ -18,13 +18,15 @@ export class DataAddPage implements OnInit {
   ngOnInit() {
   }
   temperature?: number; 
-  bloodPressure?:string; 
+  systolicBloodPressure?:number; 
+  diastolicBloodPressure?: number;
   weight?: number;
   date?: any;
 
   note:Note={
     temperature: this.temperature,
-    bloodPressure: this.bloodPressure,
+    systolicBloodPressure: this.systolicBloodPressure,
+    diastolicBloodPressure: this.diastolicBloodPressure,
     weight: this.weight,
     date: this.date
   }

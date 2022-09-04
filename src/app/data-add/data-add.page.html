@@ -14,7 +14,9 @@
         <ion-input required type="number" [(ngModel)]="note.temperature" name="temeprature"></ion-input>
         <br>
         <ion-label>Blood pressure [mm/Hg]</ion-label>
-        <ion-input required type="text" [(ngModel)]="note.bloodPressure" name="bloodPressure"></ion-input>
+        <ion-input required type="text" placeholder= 'systolic' [(ngModel)]="note.systolicBloodPressure" name="systolicbloodPressure"></ion-input><br>
+        {{note.systolicbloodPressure}}
+        <ion-input required type="text" placeholder= 'diastolic'[(ngModel)]="note.diastolicBloodPressure" name="diastolicBloodPressure"></ion-input>
         <br>
         <ion-label>Weight [kg]</ion-label>
         <ion-input required type="number" [(ngModel)]="note.weight" name="weight"></ion-input>

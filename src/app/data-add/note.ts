@@ -1,6 +1,7 @@
 export class Note{
     temperature: number; 
-    bloodPressure:string; 
+    systolicBloodPressure:number; 
+    diastolicBloodPressure:number;
     weight: number;
     date: any;
 }
